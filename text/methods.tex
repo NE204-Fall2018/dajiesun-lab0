@@ -1,0 +1,15 @@
+This is not a real lab in the sense that we don't need to collect data by ourselves. The data is given by the instrutor and can be downloaded by students. Because this experiment is actually used to practice writing lab reports, so what we have to do is doing energy calibration using the data given us.
+
+The data file consists of pulse height spectra taken with a coaxial HPGe detector using 5 different radionuclide calibration sources: 241 Am, 133 Ba,137 Cs, 60 Co, and 152 Eu. The MCA with which the data was collected had 13-bit resolution, yielding 8192 channels. As the charteristical energy of the full energy peaks of these 5 radionuclide is already known, which is to say you can find their spectrum in textbook or nuclear data website, we only need to find out the centroid of each peak and correlate it with its energy using least square method.
+
+
+\[Energy=slope\cdot Channel\,Number + intercept\]
+
+As for each full energy peak, we use gaus curve to simulate and get the centroid (B) of each peak:
+\[f\left( x \right) = A \cdot {e^{ - \frac{{{{\left( {x - B} \right)}^2}}}{{2 \cdot {C^2}}}}}\]
+
+and this is acheived by function $curve\_fit$.
+
+Now, the centroid of each peak and its corresponding energy are known, we can make linear regression using least square method to find the relationship between the channel number and its corresponding energy value.
+
+
