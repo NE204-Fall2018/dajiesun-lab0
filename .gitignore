@@ -7,3 +7,13 @@
 
 # Ignore data folder
 data/*
+
+# Ignore results produced by analysis
+images/Calibration.png
+
+# LaTeX cruft
+*.aux
+*.bbl
+*.blg
+*.log
+*.pdf
